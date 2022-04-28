@@ -1,9 +1,11 @@
 {
   "compilerOptions": {
+    "allowJs": true,
     "outDir": "dist",
+    "module": "ES6",
+    "moduleResolution": "node",
     "sourceMap": true,
-    "target": "ES6"
-  },
-  "include": ["src/**/*.ts"],
-  "exclude": ["node_modules/**/*"]
+    "strict": true,
+    "target": "ES5"
+  }
 }
