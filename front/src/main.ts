@@ -7,8 +7,7 @@ const generateNCircles = (n = 10) => {
   const r = 3;
   const bigCircleRadius = 90;
   for (let i = 0; i < n; i++) {
-    const angle = (i * (2 * Math.PI)) / n;
-
+    const angle = getAngle(i, n);
     const p = getPointOnCircle(angle, bigCircleRadius);
 
     generateCircle(p, r);
