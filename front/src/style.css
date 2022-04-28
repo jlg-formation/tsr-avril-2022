@@ -1,3 +1,17 @@
 body {
   font-family: sans-serif;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+
+svg {
+  width: 50em;
+  height: 25em;
+  border: 0.1em solid black;
+}
+
+circle {
+  stroke: black;
+  fill: transparent;
 }
