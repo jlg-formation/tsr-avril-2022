@@ -24,3 +24,14 @@ g.points circle {
 g.lines line {
   stroke: black;
 }
+
+div.command {
+  width: 100%;
+  max-width: 50em;
+  display: flex;
+  flex-flow: column;
+}
+
+input {
+  width: 100%;
+}

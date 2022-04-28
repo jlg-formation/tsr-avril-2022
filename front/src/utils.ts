@@ -15,6 +15,14 @@ export const getContainer = (cssSelector: string) => {
   return container;
 };
 
+export const getInputElt = (cssSelector: string): HTMLInputElement => {
+  const container = getContainer(cssSelector);
+  if (!(container instanceof HTMLInputElement)) {
+    throw new Error("bug in HTML");
+  }
+  return container;
+};
+
 export const svgns = "http://www.w3.org/2000/svg";
 
 export const getAngle = (index: number, total: number): number => {
