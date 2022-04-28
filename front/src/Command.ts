@@ -7,14 +7,13 @@ export class Command {
   callback = (config: FigureConfig) => {};
 
   constructor(private config: FigureConfig) {
-    getContainer("label.pointTotal span").innerHTML =
-      this.config.pointTotal + "";
-    getInputElt("label.pointTotal input").value = this.config.pointTotal + "";
-
-    getContainer("label.multiplyFactor span").innerHTML =
-      this.config.multiplyFactor + "";
-    getInputElt("label.multiplyFactor input").value =
-      this.config.multiplyFactor + "";
+    for (const prop of [
+      "pointTotal",
+      "multiplyFactor",
+    ] as (keyof FigureConfig)[]) {
+      getContainer(`label.${prop} span`).innerHTML = this.config[prop] + "";
+      getInputElt(`label.${prop} input`).value = this.config[prop] + "";
+    }
 
     getContainer("label.pointTotal input").addEventListener("input", (e) => {
       if (!(e.target instanceof HTMLInputElement)) {
