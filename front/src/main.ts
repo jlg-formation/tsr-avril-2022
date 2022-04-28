@@ -1,4 +1,5 @@
 import { Point } from "./interfaces/Point";
+import { getPointOnCircle } from "./utils";
 
 console.log("start");
 
@@ -51,15 +52,8 @@ const generateNLines = (multiplicationFactor = 2, n = 10) => {
     const angle1 = (i * (2 * Math.PI)) / n;
     const angle2 = (j * (2 * Math.PI)) / n;
 
-    const p1: Point = {
-      x: bigCircleRadius * Math.cos(angle1),
-      y: bigCircleRadius * Math.sin(angle1),
-    };
-    const p2: Point = {
-      x: bigCircleRadius * Math.cos(angle2),
-      y: bigCircleRadius * Math.sin(angle2),
-    };
-
+    const p1 = getPointOnCircle(angle1, bigCircleRadius);
+    const p2 = getPointOnCircle(angle2, bigCircleRadius);
     generateLine(p1, p2);
   }
 };
