@@ -44,14 +44,27 @@ const generateLine = (p1: Point, p2: Point) => {
   container.appendChild(line);
 };
 
-const p1: Point = {
-  x: 23,
-  y: 12,
+const generateNLines = (n = 10) => {
+  const multiplicationFactor = 2;
+  const bigCircleRadius = 90;
+  for (let i = 0; i < n; i++) {
+    const j = multiplicationFactor * i;
+    const angle1 = (i * (2 * Math.PI)) / n;
+    const angle2 = (j * (2 * Math.PI)) / n;
+
+    const p1: Point = {
+      x: bigCircleRadius * Math.cos(angle1),
+      y: bigCircleRadius * Math.sin(angle1),
+    };
+    const p2: Point = {
+      x: bigCircleRadius * Math.cos(angle2),
+      y: bigCircleRadius * Math.sin(angle2),
+    };
+
+    generateLine(p1, p2);
+  }
 };
-const p2: Point = {
-  x: 120,
-  y: 340,
-};
-generateLine(p1, p2);
+
+generateNLines();
 
 generateNCircles();
