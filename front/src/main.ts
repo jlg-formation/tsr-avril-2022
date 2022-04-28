@@ -44,8 +44,7 @@ const generateLine = (p1: Point, p2: Point) => {
   container.appendChild(line);
 };
 
-const generateNLines = (n = 10) => {
-  const multiplicationFactor = 2;
+const generateNLines = (multiplicationFactor = 2, n = 10) => {
   const bigCircleRadius = 90;
   for (let i = 0; i < n; i++) {
     const j = multiplicationFactor * i;
@@ -65,6 +64,8 @@ const generateNLines = (n = 10) => {
   }
 };
 
-generateNLines();
+const n = 200;
 
-generateNCircles();
+generateNLines(4, n);
+
+generateNCircles(n);
