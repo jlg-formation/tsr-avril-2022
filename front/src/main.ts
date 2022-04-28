@@ -19,7 +19,7 @@ const generateCircle = (x: number, y: number, r: number) => {
   const svgns = "http://www.w3.org/2000/svg";
   const container = document.querySelector("svg g.points");
   if (container === null) {
-    throw new Error("cannot find svg g.points");
+    throw new Error("Cannot find svg g.points");
   }
 
   const circle = document.createElementNS(svgns, "circle");
@@ -33,7 +33,7 @@ const generateLine = (p1: Point, p2: Point) => {
   const svgns = "http://www.w3.org/2000/svg";
   const container = document.querySelector("svg g.lines");
   if (container === null) {
-    throw new Error("cannot find svg g.lines");
+    throw new Error("Cannot find svg g.lines");
   }
 
   const line = document.createElementNS(svgns, "line");
