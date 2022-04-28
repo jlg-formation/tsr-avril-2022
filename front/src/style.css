@@ -15,3 +15,12 @@ circle {
   stroke: black;
   fill: transparent;
 }
+
+g.points circle {
+  stroke: transparent;
+  fill: black;
+}
+
+g.lines line {
+  stroke: black;
+}
