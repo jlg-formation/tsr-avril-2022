@@ -1,5 +1,5 @@
 import { Point } from "./interfaces/Point";
-import { getPointOnCircle } from "./utils";
+import { getAngle, getContainer, getPointOnCircle, svgns } from "./utils";
 
 console.log("start");
 
@@ -16,11 +16,7 @@ const generateNCircles = (n = 10) => {
 };
 
 const generateCircle = (p: Point, r: number) => {
-  const svgns = "http://www.w3.org/2000/svg";
-  const container = document.querySelector("svg g.points");
-  if (container === null) {
-    throw new Error("Cannot find svg g.points");
-  }
+  const container = getContainer("svg g.points");
 
   const circle = document.createElementNS(svgns, "circle");
   circle.setAttributeNS(null, "cx", p.x + "");
@@ -30,11 +26,7 @@ const generateCircle = (p: Point, r: number) => {
 };
 
 const generateLine = (p1: Point, p2: Point) => {
-  const svgns = "http://www.w3.org/2000/svg";
-  const container = document.querySelector("svg g.lines");
-  if (container === null) {
-    throw new Error("Cannot find svg g.lines");
-  }
+  const container = getContainer("svg g.lines");
 
   const line = document.createElementNS(svgns, "line");
   line.setAttributeNS(null, "x1", p1.x + "");
@@ -47,9 +39,8 @@ const generateLine = (p1: Point, p2: Point) => {
 const generateNLines = (multiplicationFactor = 2, n = 10) => {
   const bigCircleRadius = 90;
   for (let i = 0; i < n; i++) {
-    const j = multiplicationFactor * i;
-    const angle1 = (i * (2 * Math.PI)) / n;
-    const angle2 = (j * (2 * Math.PI)) / n;
+    const angle1 = getAngle(i, n);
+    const angle2 = getAngle(multiplicationFactor * i, n);
 
     const p1 = getPointOnCircle(angle1, bigCircleRadius);
     const p2 = getPointOnCircle(angle2, bigCircleRadius);
