@@ -9,13 +9,13 @@ const generateNCircles = (n = 10) => {
   for (let i = 0; i < n; i++) {
     const angle = (i * (2 * Math.PI)) / n;
 
-    const { x, y } = getPointOnCircle(angle, bigCircleRadius);
+    const p = getPointOnCircle(angle, bigCircleRadius);
 
-    generateCircle(x, y, r);
+    generateCircle(p, r);
   }
 };
 
-const generateCircle = (x: number, y: number, r: number) => {
+const generateCircle = (p: Point, r: number) => {
   const svgns = "http://www.w3.org/2000/svg";
   const container = document.querySelector("svg g.points");
   if (container === null) {
@@ -23,8 +23,8 @@ const generateCircle = (x: number, y: number, r: number) => {
   }
 
   const circle = document.createElementNS(svgns, "circle");
-  circle.setAttributeNS(null, "cx", x + "");
-  circle.setAttributeNS(null, "cy", y + "");
+  circle.setAttributeNS(null, "cx", p.x + "");
+  circle.setAttributeNS(null, "cy", p.y + "");
   circle.setAttributeNS(null, "r", r + "");
   container.appendChild(circle);
 };
