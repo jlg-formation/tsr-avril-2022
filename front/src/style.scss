@@ -9,3 +9,14 @@ body {
   flex-flow: column;
   align-items: center;
 }
+
+[hidden] {
+  display: none !important;
+}
+
+div.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 5em;
+}
