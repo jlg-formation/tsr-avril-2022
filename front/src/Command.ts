@@ -4,7 +4,9 @@ import { getContainer, getInputElt } from "./utils";
 type CommandCallback = (config: FigureConfig) => void;
 
 export class Command {
-  callback = (config: FigureConfig) => {};
+  callback: CommandCallback = () => {
+    // by default, do nothing
+  };
 
   constructor(private config: FigureConfig) {
     for (const prop of [
