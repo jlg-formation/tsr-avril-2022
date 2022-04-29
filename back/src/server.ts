@@ -3,8 +3,8 @@ import serveIndex from "serve-index";
 
 console.log("about to start the server");
 const app = express();
-const port = 3000;
-const wwwDir = "./public";
+const port = +process.env.PORT || 3000;
+const wwwDir = "../front/dist";
 
 app.use((req, res, next) => {
   console.log("req: ", req.url);
