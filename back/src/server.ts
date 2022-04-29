@@ -1,6 +1,6 @@
-console.log("about to start the server");
+import express from "express";
 
-const express = require("express");
+console.log("about to start the server");
 const app = express();
 const port = 3000;
 
