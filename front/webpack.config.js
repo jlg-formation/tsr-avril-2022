@@ -37,6 +37,13 @@ module.exports = (env, argv) => {
       path: path.resolve(__dirname, "dist"),
       clean: true,
     },
+    devServer: {
+      static: {
+        directory: path.join(__dirname, "dist"),
+      },
+      compress: true,
+      port: 9000,
+    },
   };
 
   if (argv.mode !== "production") {
