@@ -1,0 +1,10 @@
+div.command {
+  width: 100%;
+  max-width: $width;
+  display: flex;
+  flex-flow: column;
+
+  input {
+    width: 100%;
+  }
+}

@@ -1,0 +1,11 @@
+@import "./scss/variables.scss";
+
+@import "./scss/command.scss";
+@import "./scss/figure.scss";
+
+body {
+  font-family: sans-serif;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}

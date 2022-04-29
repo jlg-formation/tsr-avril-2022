@@ -1,4 +1,4 @@
-import "./style.css";
+import "./style.scss";
 
 import { Command } from "./Command";
 import { Figure } from "./Figure";

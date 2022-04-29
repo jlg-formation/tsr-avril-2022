@@ -1,0 +1,23 @@
+svg {
+  width: $width;
+  height: 25em;
+  border: 0.1em solid black;
+
+  circle {
+    stroke: black;
+    fill: transparent;
+  }
+
+  g.points {
+    circle {
+      stroke: transparent;
+      fill: black;
+    }
+  }
+
+  g.lines {
+    line {
+      stroke: black;
+    }
+  }
+}
