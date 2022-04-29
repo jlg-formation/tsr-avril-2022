@@ -12,3 +12,9 @@ app.get("/multi-config", (req, res) => {
   };
   res.json(config);
 });
+
+app.get("/crash", (req, res) => {
+  (async () => {
+    throw new Error("crash...");
+  })();
+});

@@ -11,7 +11,7 @@ const wwwDir = "../front/dist";
 
 app.use((req, res, next) => {
   console.log("req: ", req.url);
-  setTimeout(next, 2000);
+  setTimeout(next, 10);
 });
 
 // app.use(cors());
