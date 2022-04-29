@@ -2,12 +2,14 @@ import "./style.scss";
 
 import { Command } from "./Command";
 import { Figure } from "./Figure";
+import { Api } from "./Api";
 
 console.log("start");
 
-const main = () => {
+const main = async () => {
   const figure = new Figure();
-  const defaultConfig = { pointTotal: 10, multiplyFactor: 2 };
+  const api = new Api();
+  const defaultConfig = await api.getConfig();
   figure.draw(defaultConfig);
 
   const command = new Command(defaultConfig);

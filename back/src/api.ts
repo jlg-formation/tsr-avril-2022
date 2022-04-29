@@ -8,7 +8,7 @@ export default app;
 app.get("/multi-config", (req, res) => {
   const config: FigureConfig = {
     multiplyFactor: 23,
-    pointTotal: 12,
+    pointTotal: 56,
   };
   res.json(config);
 });
