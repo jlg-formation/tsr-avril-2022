@@ -1,6 +1,8 @@
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const path = require("path");
 
 const config = {
+  plugins: [new MiniCssExtractPlugin()],
   entry: "./src/main.ts",
   mode: process.env.NODE_ENV === "production" ? "production" : "development",
   module: {
@@ -9,6 +11,10 @@ const config = {
         test: /\.tsx?$/,
         use: "ts-loader",
         exclude: /node_modules/,
+      },
+      {
+        test: /\.css$/i,
+        use: [MiniCssExtractPlugin.loader, "css-loader"],
       },
     ],
   },

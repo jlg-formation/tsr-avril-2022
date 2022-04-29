@@ -1,3 +1,5 @@
+import "./style.css";
+
 import { Command } from "./Command";
 import { Figure } from "./Figure";
 
