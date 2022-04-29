@@ -7,5 +7,7 @@
     "module": "CommonJS",
     "moduleResolution": "Node",
     "strict": true
-  }
+  },
+  "include": ["src/**/*.ts"],
+  "exclude": ["node_modules/**/*"]
 }
